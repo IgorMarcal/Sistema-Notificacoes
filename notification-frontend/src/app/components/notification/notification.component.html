@@ -1,0 +1,16 @@
+
+
+<div class="notification-container">
+  <div class="input-group">
+    <input type="text" [formControl]="messageControl" placeholder="Digite sua mensagem" />
+    <button (click)="sendNotification()" [disabled]="!messageControl.value">Enviar</button>
+  </div>
+
+  <ul class="notifications-list">
+    <li *ngFor="let notification of notifications" [ngClass]="notification.status">
+      <span><strong>ID:</strong> {{ notification.mensagemId }}</span>
+      <span><strong>Conteúdo:</strong> {{ notification.conteudoMensagem }}</span>
+      <span><strong>Status:</strong> {{ notification.status }}</span>
+    </li>
+  </ul>
+</div>
